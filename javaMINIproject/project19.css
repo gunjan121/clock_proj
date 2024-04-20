@@ -1,0 +1,132 @@
+body{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	height:100vh;
+}
+:root{
+	--primary-color:#000;
+	--secoundary-color:#fff;
+}
+
+html{
+	transition:all 0.5s ease-in;
+}
+
+html.dark{
+	--primary-color:#fff;
+	--secoundary-color:#333;
+}
+
+html.dark{
+	background-color:#111;
+	color:var(--primary-color);
+}
+
+.toggle{
+	cursor:pointer;
+	background-color:var(--primary-color);
+	color:var(--secoundary-color);
+	border-radius:5px;
+	position:absolute;
+	top:50px;
+	padding:7px;
+
+}
+
+.toggle:focus{
+	outline:none;
+}
+
+.clock-container{
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+ align-items:center;
+}
+
+.clock{
+	position:relative;
+	width:200px;
+	height:200px;
+	background-color:#888;
+}
+
+.needle{
+	background-color:var(--primary-color);
+	position:absolute;
+	top:50%;
+	left:50%;
+	height:65px;
+	width:4px;
+	transform-origin:bottom center;
+	transition:all 0.5s ease-in;
+}
+
+.needle.hour{
+	transform:translate(-50%,-100%) rotate(0deg);
+	height:50px;
+}
+
+.needle.minute{
+	border-radius:3px;
+	background-color:red;
+	transform:translate(-50%,-100%) rotate(0deg);
+	height:65px;
+	width:4px;
+}
+
+.needle.second{
+	transform:translate(-50%,-100%) rotate(0deg);
+	background-color:white;	
+
+}
+
+.center-point{
+	background-color:red;
+	width:10px;
+	height:10px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	border-radius:50%;
+}
+
+.center-point::after{
+	content:'';
+	background-color:var(--primary-color);
+	width:5px;
+	height:5px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	border-radius:50%;
+}
+
+.time{
+	font-size:40px;
+}
+
+.date{
+	color:#999;
+	font-size:20px;
+	letter-spacing:0.9px;
+	text-transform:uppercase;
+}
+
+.date .circle{
+	background-color:var(--primary-color);
+	color:var(--secoundary-color);
+	border-radius:50%;
+	display:inline-flex;
+	height:18px;
+	width:18px;
+	align-item:center;
+	justify-content:center;
+	line-height:18px;
+	transition:all 0.5s ease-in;
+	font-size:12px;
+}
